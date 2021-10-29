@@ -60,10 +60,11 @@ const app = new Vue ({
         },
     },
     mounted : function() {
-        console.log('MONTATO CORRETTAMNETE');
+        console.log('appena montato');
         setInterval (slides, 3000)
         function slides(){
             console.log('ciao');
+            app.arrowDown(slides)
          
 
         }
@@ -71,4 +72,3 @@ const app = new Vue ({
 })
 
 
-/*setInterval (arrowDown, 1000)*/
