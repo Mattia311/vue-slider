@@ -4,6 +4,7 @@
 //Applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente.
 
 
+
 const app = new Vue ({
     el: '#app',
     data: {
@@ -37,13 +38,13 @@ const app = new Vue ({
             
         ]
     },
+    
     methods: {
-        
         arrowDown () {
             
             console.log('scorri in basso');
             this.corrente++;
-            if(this > this.slides.items){
+            if(this.corrente > this.slides.length - 1){
                 this.corrente = 0;
             }
         },  
@@ -51,11 +52,12 @@ const app = new Vue ({
             
             console.log('scorri in alto');
             this.corrente--;
-            if(this.corrente == -1){
-                this.corrente = this.slides.items.length - 1;
+            if(this.corrente < 0){
+                this.corrente = this.slides.length - 1;
             }
         },
     }
 })
 
 
+/*setInterval (arrowDown, 1000)*/
