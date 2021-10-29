@@ -36,10 +36,12 @@ const app = new Vue ({
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
             },
             
+            
         ]
     },
     
     methods: {
+
         arrowDown () {
             
             console.log('scorri in basso');
@@ -56,6 +58,15 @@ const app = new Vue ({
                 this.corrente = this.slides.length - 1;
             }
         },
+    },
+    mounted : function() {
+        console.log('MONTATO CORRETTAMNETE');
+        setInterval (slides, 3000)
+        function slides(){
+            console.log('ciao');
+         
+
+        }
     }
 })
 
