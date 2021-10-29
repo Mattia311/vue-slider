@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New carosell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">    
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div id="app">
-        <div>
-            
+        <div class="container">
+            <div class="img-sfondo">
+                <img :src="slides[corrente].items" id="slider" alt="">
+                <h1 class="text-end">{{slides[corrente].title}}</h1>
+                <p class="text-end">{{slides[corrente].text}}</p>
+            </div>
+            <div>
+                <button @click="arrowTop" id="arrow-top"><i class="fas fa-chevron-up"></i></button>
+                <button @click="arrowDown" id="arrow-bottom"><i class="fas fa-chevron-down"></i></button>
+                <ul>
+                    <li v-for= 'slide in slides' class="img-carosello">
+                        <img :src="slide.items" alt="">
+                    </li>
+                </ul>
+            </div>
         </div>
-
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

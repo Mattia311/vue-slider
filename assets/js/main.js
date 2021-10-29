@@ -1,6 +1,13 @@
+//Rifare l'esercizio dello slider come fatto assieme in classe.
+
+//BONUS
+//Applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente.
+
+
 const app = new Vue ({
     el: '#app',
     data: {
+        corrente: 0,
         slides: [
             {
                 items: 'img/01.jpg',
@@ -27,8 +34,27 @@ const app = new Vue ({
                 title: 'Paradise',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
             },
-
+            
         ]
+    },
+    methods: {
+        
+        arrowDown () {
+            
+            console.log('scorri in basso');
+            this.corrente++;
+            if(this > this.slides.items){
+                this.corrente = 0;
+            }
+        },  
+        arrowTop () {
+            
+            console.log('scorri in alto');
+            this.corrente--;
+            if(this.corrente == -1){
+                this.corrente = this.slides.items.length - 1;
+            }
+        },
     }
 })
 
